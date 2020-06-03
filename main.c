@@ -40,7 +40,7 @@ int main(int argc, char** argv)
 	}
 
 	/* edo mporousame na desmeusoume kai kalutera ton xoro ton onomaton analoga me to poia leitourgia
-	   dinei o xrhsths me to katallhlo argv[] omos mias kai den poianoun polu xoro kai dn eixame xrono...
+	   dinei o xrhsths me to katallhlo argv[]
 	*/
 	if((filename = (char*)malloc(sizeof(argv[1])*100)) == NULL)
 	{
