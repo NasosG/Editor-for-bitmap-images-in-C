@@ -1,8 +1,3 @@
-/*
-** Galatis Athanasios	  AM: 2022201500017     email: dit15017@uop.gr
-** Mpouzas Nikolaos		  AM: 2022201500098	    email: dit15098@uop.gr
-*/
-
 #include <strings.h>
 #include <string.h>
 #include <ctype.h>
