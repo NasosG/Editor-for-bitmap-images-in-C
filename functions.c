@@ -11,7 +11,8 @@ int contrastf(char* filename, char* filename2, double percent)
 	bmpHeader *h1;
 	
 	fp1 = fopen(filename,"rb");
-	if (fp1 == NULL){
+	if (fp1 == NULL)
+	{
 		puts("file doesn't exist");
 		exit(1);
 	}
@@ -145,25 +146,29 @@ int contautof(char* filename, char* filename2)
 						
 	unsigned char *img;
 	fp1 = fopen(filename,"rb");
-	if (fp1 == NULL){
+	if (fp1 == NULL)
+	{
 		puts("file doesn't exist");
 		exit(1);
 	}
 			
-	if(readHeader( fp1, h1 ) == ERROR){
+	if(readHeader( fp1, h1 ) == ERROR)
+	{
 		printf("header error\n");
 		fclose(fp1);
 		exit(1);
 	}
 
-	if(readInfo( fp1, inf1 ) == ERROR){
+	if(readInfo( fp1, inf1 ) == ERROR)
+	{
 		printf("header INFO error \n");
 		fclose(fp1);
 		exit(1);
 	}	
 			
 	double percent=0.1;
-	if((img = (unsigned char*)malloc(sizeof(unsigned char) *  inf1->bmiHeader.biSizeImage)) == NULL){
+	if((img = (unsigned char*)malloc(sizeof(unsigned char) *  inf1->bmiHeader.biSizeImage)) == NULL)
+	{
 		puts("NO SPACE AVAILABLE");
 		exit(1);
 	} 
@@ -172,7 +177,8 @@ int contautof(char* filename, char* filename2)
 	int meshtimh=0;
 	i=0;
 	//till its end
-	for(j = 0; j< inf1->bmiHeader.biSizeImage; j++ ){
+	for(j = 0; j< inf1->bmiHeader.biSizeImage; j++ )
+	{
 		i++;
 		meshtimh+=img[j];//find the average of 3 bytes
 		if(i==3)//every 3 bytes
@@ -375,7 +381,8 @@ int scalef(char* filename, char* filename2, int scale, int scalefactor)
 	bmpHeader *h1;
 		
 	fp1 = fopen(filename,"rb");
-	if (fp1 == NULL){
+	if (fp1 == NULL)
+	{
 		puts("file doesn't exist");
 		exit(1);
 	}
@@ -559,20 +566,23 @@ int flipm2f(char* filename, char* filename2, int flipm2)
 		exit(1);
 	}
 					
-	if(readHeader( fp1, h1 ) == ERROR){
+	if(readHeader( fp1, h1 ) == ERROR)
+	{
 		printf("header error\n");
 		fclose(fp1);
 		exit(1);
 	}
 
-	if(readInfo( fp1, inf1 ) == ERROR){
+	if(readInfo( fp1, inf1 ) == ERROR)
+	{
 		printf("header INFO error \n");
 		fclose(fp1);
 		exit(1);
 	}
 	
 	fp2 = fopen(filename2,"wb");
-	if (fp2 == NULL){
+	if (fp2 == NULL)
+	{
 		puts("file doesn't exist");
 		exit(1);
 	}
@@ -649,9 +659,9 @@ int flipm2f(char* filename, char* filename2, int flipm2)
 							
 		// add the padding
 			for (k=0; k < padding; k++)
-				{
-					fputc(0x00, fp2);//fill with zeros in hex
-				}
+			{
+				fputc(0x00, fp2);//fill with zeros in hex
+			}
 		}
 					
 		fclose(fp1);
@@ -683,7 +693,8 @@ int copyf(char* filename, char* filename2)
 	unsigned char* img;
 					
 	fp1 = fopen(filename,"rb");
-	if (fp1 == NULL){
+	if (fp1 == NULL)
+	{
 		puts("file doesn't exist");
 		exit(1);
 	}
@@ -706,13 +717,15 @@ int copyf(char* filename, char* filename2)
 		exit(1);
 	}
 
-	if(readInfo( fp1, inf1 ) == ERROR){
+	if(readInfo( fp1, inf1 ) == ERROR)
+	{
 		printf("header INFO error \n");
 		fclose(fp1);
 		exit(1);
 	}
 	
-	if((img = (unsigned char*)malloc(sizeof(unsigned char) *  inf1->bmiHeader.biSizeImage)) == NULL){
+	if((img = (unsigned char*)malloc(sizeof(unsigned char) *  inf1->bmiHeader.biSizeImage)) == NULL)
+	{
 		puts("NO SPACE AVAILABLE");
 		exit(1);
 	} 
